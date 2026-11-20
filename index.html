@@ -83,6 +83,8 @@ input[type=range]{accent-color:#b57926}
 @media(max-width:359px){.phoneTools button{gap:2px}.phoneTools button svg{display:none}.brand .mark{display:none}.row{gap:5px}.swatches{gap:0}.movierow{gap:5px}}
 
 
+.creator-credit{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0 .65em;padding:4px 12px max(8px,env(safe-area-inset-bottom,0px));border-top:1px solid var(--edge);color:var(--muted);font-size:14px}
+.creator-credit a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-underline-offset:3px}.creator-credit a:hover{text-decoration-thickness:2px}
 </style></head><body>
 <header class="top"><div class="brand"><span class="mark" data-icon="logo"></span><div class="brandname">墨格 <em>InkPanel</em></div><span class="product">漫画嵌字台</span></div><div class="actions"><button id="import" class="import"><i data-icon="image"></i>批量导入</button><button id="export" class="export"><i data-icon="download"></i>导出作品</button></div><input id="upload" type="file" multiple accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" hidden></header>
 <main class="wrap" id="editor"><div class="head"><h1>嵌字工作台</h1><div class="toolstrip"><button id="undo" title="撤销 (Ctrl+Z)" aria-label="撤销"><i data-icon="undo"></i></button><button id="redo" title="重做 (Ctrl+Shift+Z)" aria-label="重做"><i data-icon="redo"></i></button></div></div>
@@ -107,6 +109,7 @@ input[type=range]{accent-color:#b57926}
 <div class="movierow"><label for="aspect">画幅</label><select id="aspect"><option value="first">跟随首页</option><option value="wide">横屏 16∶9</option><option value="tall">竖屏 9∶16</option><option value="square">方形 1∶1</option></select></div>
 <div class="movierow"><label for="movieFormat">文件格式</label><select id="movieFormat"></select></div></fieldset></section></div></div>
 </main>
+<footer class="creator-credit" aria-label="制作署名"><span>制作署名</span><a href="https://space.bilibili.com/3493108232751201" target="_blank" rel="noopener noreferrer">哔哩哔哩 · UID 3493108232751201</a></footer>
 <dialog id="exportMenu"><div class="dialoghead"><h2>导出作品</h2><button id="closeMenu">关闭</button></div><button id="imageExport" class="exportchoice">导出图片<small id="pngLabel"></small></button><button id="videoStudio" class="exportchoice">制作视频<small>设定时长、转场与配乐</small></button></dialog>
 <div id="jobBox" role="status" hidden><span id="jobText" class="jobtext"></span><progress id="jobProgress" value="0" max="1"></progress><button id="cancelJob">取消导出</button></div>
 <div id="notice" role="status" class="notice"></div>
