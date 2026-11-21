@@ -281,7 +281,7 @@ function layout(g,b,logicalHeight=H){
   const shrink=Math.min(1,W*.92/w,logicalHeight*.92/(h*(1+tail)/2));
   if(shrink>=.999)break;fs*=shrink*.98;
  }
- const x=clamp(b.x,W*.008+w*.52,W*.992-w*.52),y=clamp(b.y,logicalHeight*.008+h*.52,logicalHeight*.992-h*.51*tail);
+ const x=clamp(b.x,0,W),y=clamp(b.y,0,logicalHeight);
  return {x,y,w,h,fs,blocks,tail,vertical};
 }
 function paintLinked(g,blocks,fill,stroke,rectangular){
@@ -386,6 +386,7 @@ function savePage(){
 function pagePaint(g,p,width,height){
  const logicalH=1000*p.image.naturalHeight/p.image.naturalWidth;
  g.save();g.scale(width/1000,height/logicalH);
+ g.beginPath();g.rect(0,0,1000,logicalH);g.clip();
  g.drawImage(p.image,0,0,1000,logicalH);
  for(const b of p.bubbles)paintBubble(g,b,layout(g,b,logicalH));
  g.restore();
